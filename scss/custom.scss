@@ -1,0 +1,68 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../bootstrap/bootstrap-5.3.3/scss/functions";
+
+// 2. Include any default variable overrides here
+$primary: #1668e8;
+$secondary: #c7f2ab;
+$enable-cssgrid: true;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../bootstrap/bootstrap-5.3.3/scss/variables";
+@import "../bootstrap/bootstrap-5.3.3/scss/variables-dark";
+
+$custom-spacers: (
+  8: $spacer * 8,
+);
+
+$spacers: map-merge($spacers, $custom-spacers);
+
+$custom-colors: (
+  "abu": #f7f7f7,
+  "putih": #ffffff,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$accordion-button-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' d='M12 3.5v17m8.5-8.5h-17'/%3E%3C/svg%3E");
+$accordion-button-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' d='M12 3.5v17m8.5-8.5h-17'/%3E%3C/svg%3E");
+$accordion-icon-transform: rotate(45deg);
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../bootstrap/bootstrap-5.3.3/scss/maps";
+@import "../bootstrap/bootstrap-5.3.3/scss/mixins";
+@import "../bootstrap/bootstrap-5.3.3/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../bootstrap/bootstrap-5.3.3/scss/utilities";
+@import "../bootstrap/bootstrap-5.3.3/scss/reboot";
+@import "../bootstrap/bootstrap-5.3.3/scss/type";
+@import "../bootstrap/bootstrap-5.3.3/scss/images";
+@import "../bootstrap/bootstrap-5.3.3/scss/containers";
+@import "../bootstrap/bootstrap-5.3.3/scss/grid";
+@import "../bootstrap/bootstrap-5.3.3/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../bootstrap/bootstrap-5.3.3/scss/utilities/api";
+
+// 8. Add additional custom code here
+
+@import "../bootstrap/bootstrap-5.3.3/scss/bootstrap.scss";
+
+.read-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 6px solid white;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  svg {
+    transform: rotate(45deg);
+  }
+}
